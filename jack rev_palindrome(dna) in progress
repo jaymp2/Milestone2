@@ -1,0 +1,32 @@
+def reverse_complement(dna):
+    dna = dna[::-1]
+    ans = ""
+    for ch in dna:
+        if ch == "A":
+            ans += "T"
+        elif ch == "C":
+            ans += "G"
+        elif ch == "T":
+            ans += "A"
+        elif ch == "G":
+            ans += "C"
+
+    return ans
+def rev_palindrome(dna):
+    ans = []
+    ln = 4
+    while ln <= 12:
+        for i in range(len(dna)):
+            
+            looking = dna[i:(i+ln)]
+            if looking == reverse_complement(looking):
+                ans = ans.append([i,ln])
+        ln = ln + 1
+    return ans
+rev_palindrome("TCAATGCATGCGGGTCTATATGCAT")
+            
+            
+            
+            
+            
+        
