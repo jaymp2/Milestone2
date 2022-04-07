@@ -17,18 +17,12 @@ def rev_palindrome(dna):
     ln = 4
     while ln <= 12:
         for i in range(len(dna)):
-            if ((i + ln) < len(dna)):
+            if ((i + ln) <= len(dna)):
                 looking = dna[i:(i+ln)]
                 if looking == reverse_complement(looking):
-                    ans.append([i,ln])
+                    ans.append((i,ln))
         ln = ln + 1
     return ans
-print(rev_palindrome("TCAATGCATGCGGGTCTATATGCAT"))
+print(rev_palindrome("AACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"))
             
             #[(3, 6),(4, 4),(5, 6),(6, 4),(16, 4),(17, 4),(19, 6),(20, 4)]
-            
-            
-            
-            
-            
-        
