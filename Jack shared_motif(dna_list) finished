@@ -1,0 +1,56 @@
+def shared_motif(dna_list):
+    sortted = sorted(dna_list, key=len)
+    sortted.reverse()
+    base = sortted[0]
+    rest = sortted[1:len(dna_list)]
+    #print (rest)
+    #print (base)
+    ln = 1 
+    all_subs = []
+    inall = []
+    
+    while ln <= len(base):
+        
+        #inall = []
+        
+        sub_of_num = []
+        rn = range(0,len(base),-1)
+        #print (rn)
+        
+        for i in range(len(base),0,-1):
+            #print (i)
+            #print ("here")
+            count = 0
+
+            if ((i + ln) <= len(base)):
+                looking = base[(i-ln):i] 
+                #print(looking + " looking")
+
+
+
+                for j in rest:
+                    if j.find(looking) != -1:
+                        all_subs.append(looking)
+                        sub_of_num.append(looking)
+                        count = count + 1
+                        #print("count")
+
+                        if count == len(rest):
+                            if looking != "":
+                                #inall = []
+                                inall.append(looking)
+
+                        #print(j)
+
+            #print (count)
+            #print ("Next letter")
+          
+        ln = ln + 1
+        #print(inall)
+        #print("inall")
+        #print (all_subs) 
+        #print(sub_of_num)
+    if inall == []:
+        inall = [""]
+
+    return inall[-1]
