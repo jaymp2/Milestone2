@@ -1,0 +1,13 @@
+def find_splice(dna_motif,dna):
+    position = []
+    index = 0
+    for x in range(len(dna_motif)):
+        while index < len(dna) and dna[index] != dna_motif[x]:
+            index += 1
+            print(index)
+
+        if index > len(dna):
+            return []
+        position.append(index)
+        index += 1
+    return position
