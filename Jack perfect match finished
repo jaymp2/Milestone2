@@ -1,0 +1,11 @@
+def perfect_match(rna):
+    import math
+    Cs = rna.count("C")
+    As = rna.count("A")
+    Gs = rna.count("G")
+    Us = rna.count("U")
+    ans = 0
+    if (Cs == Gs) and (As == Us):
+        ans = math.factorial(Cs)*math.factorial(Gs)
+    
+    return ans
