@@ -1,9 +1,0 @@
-def find_splice(dna_motif,dna):
-    position = []
-    index = 0
-    for x in range(len(dna_motif)):
-        while dna[index] != dna_motif[x]:
-            index += 1
-        position.append(index)
-    return position
- 
